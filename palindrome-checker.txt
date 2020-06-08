@@ -1,5 +1,4 @@
 function palindrome(str) {
-  // Good luck!
    
   var check = str.toLowerCase().replace(/[^a-z0-9]/gm,"");
   console.log(check);
