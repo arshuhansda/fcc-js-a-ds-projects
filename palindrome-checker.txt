@@ -1,0 +1,23 @@
+function palindrome(str) {
+  // Good luck!
+   
+  var check = str.toLowerCase().replace(/[^a-z0-9]/gm,"");
+  console.log(check);
+  var sLen = check.length;
+  var d = [];
+  for(let i = sLen-1;i>=0;i--) {
+    d.push(check.charAt(i));
+  }
+  var s = d.join("");
+  console.log(s);
+  if(check.localeCompare(s) === 0) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+
+
+palindrome("_race 11car,A man-, a plan, a canal. Panama");
