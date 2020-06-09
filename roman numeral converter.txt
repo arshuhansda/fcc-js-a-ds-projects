@@ -1,0 +1,36 @@
+function convertToRoman(num) {
+  //defining all the roman numbers possible
+  var romans = [
+    {decimal : 1000, roman : "M"},
+    {decimal : 900, roman : "CM"},
+    {decimal : 500, roman : "D"},
+    {decimal : 400, roman : "CD"},
+    {decimal : 100, roman : "C"},
+    {decimal : 90, roman : "XC"},
+    {decimal : 50, roman : "L"},
+    {decimal : 40, roman : "XL"},
+    {decimal : 10, roman : "X"},
+    {decimal : 9, roman : "IX"},
+    {decimal : 5, roman : "V"},
+    {decimal : 4, roman : "IV"},
+    {decimal : 1, roman : "I"}
+  ];
+  var rom = "";
+  var l = romans.length;
+  //loop to accesss the romans array 
+  for(var i=0;i<l;i++) {
+    //since the romans array is in decending order, we get to the largest array which is smaller or equal to the number in input
+    while(romans[i].decimal <= num) {
+      //after getting the largest number nearer to num, we add to the roman number string
+      rom += romans[i].roman;
+      // after adding that largest roman number, we subtract the decimal value of the roman value from the num
+      num -= romans[i].decimal;
+    }
+  }
+
+ return rom;
+
+}
+
+convertToRoman(36);
+console.log(convertToRoman(68));
