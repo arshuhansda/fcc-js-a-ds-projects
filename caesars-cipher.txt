@@ -1,0 +1,28 @@
+function rot13(str) {
+//rotate by 13 places
+var stringLength = str.length;
+var cip = "";
+
+//var txt = str.replace(/A-Z/,+13);
+
+for(var i = 0;i<stringLength;i++) {
+  if(str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 91) {
+    var numAfterShift = String.fromCharCode(65+(str.charCodeAt(i)-65+13)%26);
+    cip += numAfterShift;
+    //console.log(cip);
+  }
+  else {
+    cip += str.charAt(i);
+  }
+  
+}
+
+console.log(cip);
+
+//console.log(numAfterShift);
+
+return cip;
+
+}
+
+rot13("GUR DHVPX OEBJA SBK WHZCF BIRE GUR YNML QBT.");
